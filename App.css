@@ -1,0 +1,262 @@
+/* Reset & Base Styles */
+body, html {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000000;
+}
+
+.app {
+  width: 100%;
+  color: #fff;
+}
+
+/* Header */
+.header {
+  display: flex;
+  width: 100%;
+}
+
+.header-left {
+  background-color: #a8744a; /* Warna latar untuk SIWON */
+  padding: 15px 35px;
+}
+
+.header-right {
+  flex: 1;
+  background-color: #d6b88d; /* Warna latar navigasi kanan */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px 35px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+  color: #fff;
+  font-family: 'Cursive', sans-serif;
+}
+
+.nav a {
+  margin: 20px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  color: #a8744a; 
+}
+
+.auth-buttons {
+  background-color: #d6b88d;
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+  padding: 15px 25px;
+}
+
+.signup-btn, .login-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.signup-btn {
+  background-color: #4CAF50;
+}
+
+.login-btn {
+  background-color: #008CBA;
+}
+
+.signup-btn:hover, .login-btn:hover {
+  opacity: 0.8;
+}
+
+/* .username {
+  margin-left: auto;
+  color: #933901;
+  font-weight: bold;
+} */
+
+/* Hero Section */
+.hero {
+  width: 100%;
+  background-image: url('assets/image 5.png'); /* Ubah sesuai nama gambar di public */
+  background-color: #000000;
+  background-size: cover;
+  background-position: center;
+
+  height: 490px;
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay h1 {
+  /* background-color: rgba(0, 0, 0, 0.6); */
+  text-align: center;
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 28px;
+}
+.hero-overlay p {
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+}
+
+
+.search-filter {
+  background-color: #f2e2c4;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.search-input {
+  width: 40%;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  font-size: 16px;
+}
+
+.filter-tags {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.filter-tag {
+  background-color: #A36234;
+  color: white;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.filter-tag:hover {
+  background-color: #77411b;
+}
+
+.animal-gallery {
+  background-color: #f6e8d9;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  padding: 40px 60px;
+  justify-items: center;
+}
+
+.animal-card {
+  background-color: #fff;
+  width: 100%;
+  max-width: 240px;
+  border-radius: 20px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animal-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.animal-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 2px solid #f2e2c4;
+}
+
+.animal-card h3 {
+  margin: 15px 0 5px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #4a2d1f;
+  text-transform: capitalize;
+}
+
+.animal-card p {
+  font-size: 14px;
+  text-align: center;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.adopt-btn {
+  margin: 7px auto 20px;
+  padding: 8px 16px; 
+  background-color: #a8744a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.adopt-btn:hover {
+  background-color: #77411b;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px 0;
+  background-color: #f2e2c4;
+}
+.pagination button {
+  padding: 8px 16px;
+  background-color: #A36234;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.pagination button.active {
+  background-color: #77411b;
+}
+
+/* CTA Button */
+.cta-button {
+  background-color: #f2e2c4;
+  text-align: center;
+}
+.cta-button ::shadow {
+  background-color: #f2e2c4;
+}
+
+.adopt-button {
+  padding: 12px 30px;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 50px ;
+  margin-bottom: 50px;
+  background-color: #A36234;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.filter-tag.active {
+  background-color: #955b24;
+  color: white;
+  font-weight: bold;
+}

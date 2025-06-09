@@ -1,0 +1,165 @@
+/* Reset & Base Styles */
+body, html {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000000;
+}
+
+.app {
+  width: 100%;
+  color: #fff;
+}
+
+/* Header */
+.header {
+  display: flex;
+  width: 100%;
+}
+
+.header-left {
+  background-color: #a8744a; /* Warna latar untuk SIWON */
+  padding: 15px 35px;
+}
+
+.header-right {
+  flex: 1;
+  background-color: #d6b88d; /* Warna latar navigasi kanan */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px 35px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+  color: #fff;
+  font-family: 'Cursive', sans-serif;
+}
+
+.nav a {
+  margin: 20px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav a:hover {
+  color: #a8744a; 
+}
+
+.username {
+  margin-left: auto;
+  color: #933901;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  width: 100%;
+  background-image: url('/src/assets/image\ 5.png'); /* Ubah sesuai nama gambar di public */
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay h2 {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px 30px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 20px;
+}
+
+/* Status Section */
+.status-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 20px;
+  background-color: #f2e2c4;
+  color: #000;
+  flex-wrap: wrap;
+}
+
+.status-card {
+  text-align: center;
+  width: 270px;
+}
+
+.status-box {
+  display: flex;
+  width: 280px;
+  height: 280px;
+  gap: 100px;
+  background-color: #ccc;
+  margin: 15px auto;
+  border: 2px solid #9E9E9E;
+  border-radius: 8px;
+}
+
+.status-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+.status-button {
+  padding: 10px 15px;
+  background-color: #9E9E9E;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* CTA Button */
+.cta-button {
+  background-color: #f2e2c4;
+  text-align: center;
+}
+.cta-button ::shadow {
+  background-color: #f2e2c4;
+}
+
+.adopt-button {
+  padding: 12px 30px;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 50px ;
+  margin-bottom: 50px;
+  background-color: #A36234;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  width: 97%;
+  background-color: #D2B48C;
+  padding: 30px 20px;
+  color: white;
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.footer-links {
+  margin-top: 15px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+}

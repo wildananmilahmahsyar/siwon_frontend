@@ -1,0 +1,123 @@
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin: 0;
+background-color: #fffaf4;
+}
+
+.artikel-container {
+display: flex;
+justify-content: space-between;
+padding: 40px;
+max-width: 1200px;
+margin: auto;
+gap: 40px;
+}
+
+.left-section {
+flex: 2;
+}
+
+.left-section h1 {
+font-size: 20px;
+margin-bottom: 30px;
+color: #4b2e1f;
+}
+
+.article-card {
+display: flex;
+background-color: #f6e7d7;
+border-radius: 16px;
+padding: 16px;
+margin-bottom: 24px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.article-card img {
+width: 120px;
+height: 120px;
+border-radius: 12px;
+object-fit: cover;
+margin-right: 20px;
+}
+
+.article-content h2 {
+margin: 0;
+color: #5a2a1c;
+}
+
+.category {
+font-size: 14px;
+color: #8f5e3c;
+text-align: justify;
+}
+
+.excerpt {
+font-size: 15px;
+color: #333;
+margin-top: 8px;
+text-align: justify;
+}
+
+.right-section {
+flex: 1;
+}
+
+.right-section h3 {
+color: #5a2a1c;
+margin-bottom: 20px;
+}
+
+.trending-card {
+display: flex;
+background-color: #f3dac4;
+border-radius: 16px;
+padding: 12px;
+margin-bottom: 16px;
+box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.trending-card img {
+width: 80px;
+height: 80px;
+border-radius: 10px;
+object-fit: cover;
+margin-right: 12px;
+}
+
+.trending-card h4 {
+margin: 0 0 6px 0;
+font-size: 16px;
+color: #4b2e1f;
+}
+
+.trending-card p {
+font-size: 14px;
+color: #444;
+text-align: justify;
+}
+
+/* Tambahan umum untuk memastikan semua paragraf dalam artikel ter-justify */
+.article-content p {
+text-align: justify;
+}
+.article-card {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.article-content h2 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.article-content .category {
+  font-size: 14px;
+  margin-bottom: 8px;
+  word-break: break-all;
+}
+
+.article-content .excerpt {
+  font-size: 15px;
+  color: #333;
+}

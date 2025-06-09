@@ -1,0 +1,340 @@
+/* profil.css */
+body, html {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fbe7c6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.profil-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.page-title {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-size: 28px;
+  font-weight: 600;
+  color: #3b2f2f;
+}
+
+.profile-section {
+  background-color: #f5e6ca;
+  padding: 40px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  /* border-top: 2px solid #955b24; */
+  border-bottom: 2px solid #955b24;
+  width: 100%;
+}
+
+.animal-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #955b24;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 700px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.label {
+  font-size: 18px;
+  color: #4a321f;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.paw {
+  font-size: 18px;
+}
+
+.info-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid #955b24;
+  border-bottom: 1px solid #955b24;
+  /* border-left: 1px solid #955b24;
+  border-right: 1px solid #955b24; */
+  background-color: #f7e8c4;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 0;
+  margin: 0 auto;
+  
+}
+
+.left-box {
+  border-right: 1px solid #955b24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  
+}
+
+.left-box h2 {
+  margin: 0;
+  font-size: 26px;
+  color: #000;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: bold;
+  
+}
+
+.right-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  color: #000;
+  text-align: left;
+  margin-left: 130px;
+  padding: 20px 40px;
+}
+
+.condition-checklist {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 10px;
+  
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+
+.condition {
+  display: flex;
+  gap: 80px;
+  justify-content: flex-start;
+}
+
+.adopt-btn {
+  background-color: #955b24;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s ease;
+  margin-top: 15px;
+}
+
+.adopt-btn:hover {
+  background-color: #7a431c;
+}
+
+
+/* Popup styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fae2b4;
+  padding: 24px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 320px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+
+  max-height: 95vh;      /* batasi tinggi maksimal popup */
+  overflow-y: auto;      /* beri scroll vertikal jika isi melebihi tinggi */
+}
+
+.popup-content input,
+.popup-content select,
+.popup-content textarea {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.upload-btn {
+  background-color: #955b24;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #7a431c;
+}
+
+.popup-image {
+  width: 140px;
+  height: 140px;
+  background-color: #ddd;
+  border-radius: 10px;
+  margin: 10px auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #444;
+}
+
+.popup-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* =====================
+   CHAT CONTAINER & FORM
+   ===================== */
+
+.chat-section {
+  padding: 40px 20px;
+  background-color: #fdf5e6;
+  max-width: 800px;
+  margin: 30px auto;
+  border: 1px solid #e3c29b;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.chat-messages {
+  max-height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: #fffaf2;
+  border: 1px solid #e6d2b5;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+/* =====================
+   CHAT BUBBLE ALIGNMENT
+   ===================== */
+
+.chat-message {
+  display: flex;
+  width: 100%;
+}
+
+/* Chat dari pengirim → kanan */
+.chat-user {
+  justify-content: flex-end;
+}
+
+/* Chat dari lawan bicara → kiri */
+.chat-admin {
+  justify-content: flex-start;
+}
+
+/* =====================
+   CHAT BUBBLE STYLE
+   ===================== */
+
+.chat-bubble {
+  max-width: 70%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-break: break-word;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* BUBBLE KANAN - Anda */
+.chat-user .chat-bubble {
+  background-color: #dcf8c6;
+  color: #000;
+  border-bottom-right-radius: 4px;
+  align-self: flex-end;
+}
+
+/* BUBBLE KIRI - Lawan */
+.chat-admin .chat-bubble {
+  background-color: #ffffff;
+  color: #222;
+  border-bottom-left-radius: 4px;
+  align-self: flex-start;
+}
+
+/* =====================
+   INPUT BOX
+   ===================== */
+
+.chat-box {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #cba679;
+  border-radius: 6px;
+  background-color: #fffef9;
+  font-size: 14px;
+}
+
+.chat-post {
+  background-color: #955b24;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.chat-post:hover {
+  background-color: #7a431c;
+}

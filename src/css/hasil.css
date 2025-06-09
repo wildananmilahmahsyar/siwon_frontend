@@ -1,0 +1,91 @@
+/* src/css/hasil.css */
+.hasil-container {
+  background-color: #fbe7c6;
+  color: #3a1e0c;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hasil-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.hasil-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid #955b24;
+  margin-bottom: 20px;
+}
+
+.hasil-info {
+  display: flex ;
+  justify-content: center;
+  margin-top: 30px;
+  border-top: 2px solid #955b24;
+  border-bottom: 2px solid #955b24;
+}
+
+.hasil-info .left, .hasil-info .right {
+  padding: 20px;
+  width: 50%;
+  text-align: center;
+}
+
+.hasil-info .left h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.hasil-info .right ul {
+  list-style: none;
+  padding: 0;
+  font-weight: bold;
+}
+
+.pesan-box {
+  background-color: #955b24;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.back-btn {
+  margin-top: 30px;
+  background-color: #955b24;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #7a431c;
+}
+
+.kondisi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 20px;
+  margin-top: 10px;
+  margin-left: 120px;
+  justify-items: start;
+  padding: 0 10px;
+}
+
+.kondisi-item {
+  font-weight: bold;
+  font-size: 16px;
+}

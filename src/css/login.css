@@ -1,0 +1,340 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+.desktop-container {
+  height: 100vh;
+  width: 100vw;
+  background: url('../assets/latarlogin.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Banner Section */
+.banner-section {
+  flex: 1;
+  /* background: url('../assets/latarlogin.jpg') no-repeat center center; */
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+/* Banner Section */
+.banner-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+}
+
+.banner-image {
+  order: -1; /* Memastikan gambar di sebelah kiri */
+  flex-shrink: 0;
+}
+
+.banner-image img {
+  width: 100px;
+  height: auto;
+}
+
+.paw-icon {
+  width: 95px;
+  height: 95px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.paw-icon:hover {
+  transform: scale(1.1);
+}
+
+
+/* Hapus style position absolute sebelumnya */
+.banner-image {
+  position: static;
+  bottom: auto;
+  left: 40px;
+  width: 30px;
+  height: 30px;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+}
+
+.banner-text-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.text-group h2:first-child {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.text-group h2:last-child {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+
+/* Login Section */
+.login-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: url('../assets/latarlogin.jpg') no-repeat center center; */
+  background-size: cover;
+  position: relative; /* Tambahkan ini */
+}
+
+.login-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  transform: translateX(-20%); /* Tambahkan ini untuk menggeser ke kiri */
+  margin-left: -50px; /* Adjust sesuai kebutuhan */
+}
+
+.welcome-title {
+  font-size: 0.9rem;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-subtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Styles - PERUBAHAN UTAMA DI SINI */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  color: #000000; /* Ubah warna teks menjadi hitam */
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #ffffff; /* Pastikan background putih */
+  color: #000000; /* Warna teks input hitam */
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #039BE5;
+  box-shadow: 0 0 0 2px rgba(3, 155, 229, 0.2);
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.remember-me input {
+  margin-right: 8px;
+}
+
+/* Tambahkan style untuk checkbox kustom */
+.remember-me input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+  margin-right: 8px;
+}
+
+.remember-me input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+.remember-me input[type="checkbox"]:checked {
+  background-color: white;
+}
+
+.remember-me input[type="checkbox"]:checked::after {
+  opacity: 1;
+}
+
+.remember-me input[type="checkbox"]:hover {
+  border-color: #000000;
+}
+
+.forgot-link {
+  font-size: 0.875rem;
+  color: #039BE5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.primary-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.primary-btn:hover {
+  background-color: #000000;
+}
+
+/* Divider */
+.divider {
+  text-align: center;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.divider span {
+  background: white;
+  padding: 0 10px;
+  color: #000000;
+  font-size: 0.875rem;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #ddd;
+  z-index: -1;
+}
+
+/* Social Login */
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-btn {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.2s;
+}
+
+.social-btn:hover {
+  background-color: #f5f5f5;
+}
+
+/* Signup Prompt */
+.signup-prompt {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #000000;
+  margin-top: 1rem;
+}
+
+.signup-prompt a {
+  color: #039BE5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-prompt a:hover {
+  text-decoration: underline;
+}
+
+
+/* Password Input Container */
+.password-input-container {
+  position: relative;
+}
+
+.password-input-container input {
+  padding-right: 40px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 60%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+}
+
+.toggle-password svg {
+  width: 20px;
+  height: 20px;
+  transition: color 0.2s;
+}
+
+.toggle-password:hover svg {
+  color: #000;
+}
