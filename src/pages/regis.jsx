@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import '../css/regis.css';
-import logoImage from '../assets/dog.png';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import "../css/regis.css";
+import logoImage from "../assets/dog.png";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Regis = () => {
   const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
-  const [passwordError, setPasswordError] = useState('');
+  const [passwordError, setPasswordError] = useState("");
 
   useEffect(() => {
     if (
@@ -18,9 +19,9 @@ const Regis = () => {
       formData.confirmPassword &&
       formData.password !== formData.confirmPassword
     ) {
-      setPasswordError('Passwords do not match');
+      setPasswordError("Passwords do not match");
     } else {
-      setPasswordError('');
+      setPasswordError("");
     }
   }, [formData.password, formData.confirmPassword]);
 
@@ -32,49 +33,78 @@ const Regis = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.password !== formData.confirmPassword) {
-      setPasswordError('Passwords do not match');
+      setPasswordError("Passwords do not match");
       return;
     }
     if (!formData.username || !formData.email || !formData.password) {
-      alert('Please fill out all fields');
+      Swal.fire({
+        icon: "warning",
+        title: "Form Tidak Lengkap",
+        text: "Silakan isi semua kolom!",
+      });
       return;
     }
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_BASE}/api/users`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          username: formData.username,
-          email: formData.email,
-          password: formData.password
-        })
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_API_BASE}/api/users`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: formData.username,
+            email: formData.email,
+            password: formData.password,
+          }),
+        }
+      );
 
       if (response.ok) {
-          alert('Registrasi berhasil!');
-          setFormData({
-            username: '',
-            email: '',
-            password: '',
-            confirmPassword: ''
+        Swal.fire({
+          icon: "success",
+          title: "Registrasi Berhasil!",
+          text: "Silakan login untuk melanjutkan.",
+          confirmButtonText: "OK",
+        }).then(() => {
+          window.location.href = "/login";
+        });
+        setFormData({
+          username: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+        });
+      } else {
+        const contentType = response.headers.get("content-type");
+
+        if (contentType && contentType.includes("application/json")) {
+          const errorData = await response.json();
+          Swal.fire({
+            icon: "error",
+            title: "Gagal Registrasi",
+            text: errorData.error || "Terjadi kesalahan saat registrasi.",
           });
         } else {
-          const contentType = response.headers.get("content-type");
-
-          if (contentType && contentType.includes("application/json")) {
-            const errorData = await response.json();
-            alert('Gagal registrasi: ' + errorData.error);
-          } else {
-            const errorText = await response.text(); // Ini untuk tangani HTML error
-            alert('Gagal registrasi: Server mengembalikan response tidak valid.\n' + errorText);
-          }
+          const errorText = await response.text(); // Ini untuk tangani HTML error
+          Swal.fire({
+            icon: "error",
+            title: "Gagal Registrasi",
+            html:
+              "Server mengembalikan response tidak valid:<br><pre>" +
+              errorText +
+              "</pre>",
+          });
         }
-      } catch (error) {
-        alert('Terjadi kesalahan: ' + error.message);
       }
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Kesalahan!",
+        text: error.message,
+      });
+    }
   };
 
   return (
@@ -91,10 +121,38 @@ const Regis = () => {
         <h3>LET'S GET YOU STARTED</h3>
         <h2 className="form-title">Create an Account</h2>
         <form onSubmit={handleSubmit}>
-          <input type="text" name="username" placeholder="Your Name" value={formData.username} onChange={handleChange} required />
-          <input type="email" name="email" placeholder="Username@Email.com" value={formData.email} onChange={handleChange} required />
-          <input type="password" name="password" placeholder="********" value={formData.password} onChange={handleChange} required />
-          <input type="password" name="confirmPassword" placeholder="Confirm Password" value={formData.confirmPassword} onChange={handleChange} required />
+          <input
+            type="text"
+            name="username"
+            placeholder="Your Name"
+            value={formData.username}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Username@Email.com"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="********"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            required
+          />
           {passwordError && <div className="error">{passwordError}</div>}
           <button type="submit">GET STARTED</button>
         </form>

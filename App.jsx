@@ -106,7 +106,7 @@ useEffect(() => {
       </section>
 
       <section className="search-filter">
-        <input type="text" className="search-input" placeholder="🔍  Cari nama hewan..." value={searchNama} onChange={(e) => setSearchNama(e.target.value)} />
+        <input type="text" className="search-input" placeholder="🔍  Cari jenis hewan..." value={searchNama} onChange={(e) => setSearchNama(e.target.value)} />
           <div className="filter-tags">
             {['Kucing', 'Anjing', 'Ayam', 'Kelinci', 'Burung', 'Ikan'].map((tag, index) => (
               <button
