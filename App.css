@@ -87,7 +87,7 @@ body, html {
 /* Hero Section */
 .hero {
   width: 100%;
-  background-image: url('/src/assets/image\ 5.png');
+  background-image: url('/image 5.png');
   background-color: #000000;
   background-size: cover;
   background-position: center;

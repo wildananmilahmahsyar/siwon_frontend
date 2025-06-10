@@ -35,8 +35,8 @@ const Dashboard = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero">
-        <div className="hero-overlay">
+      <section className="hero_D">
+        <div className="hero_D-overlay">
           <h2>
             SELAMAT DATANG KEMBALI, {user?.username?.toUpperCase() || "USER"}
           </h2>
