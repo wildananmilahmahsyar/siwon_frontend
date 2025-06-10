@@ -9,7 +9,7 @@ import Dashboard from '/src/pages/Dashboard';
 import Artikel from '/src/pages/artikel';
 import Header from './src/components/Header';
 import Footer from './src/components/Footer';
-import dogImage from './src/assets/anjing.png';
+// import dogImage from './assets/anjing.png';
 import Profil from './src/pages/profil'; // pastikan sudah di-import
 import ProfilAdmin from './src/pages/ProfilAdminTemp';
 import Hasil from './src/pages/Hasil';
@@ -99,6 +99,7 @@ useEffect(() => {
   return (
     <>
       <section className="hero">
+        
         <div className="hero-overlay">
           <h1>SIWON</h1>
           <p>Adopsi hewan secara bertanggung jawab melalui platform kami.</p>
