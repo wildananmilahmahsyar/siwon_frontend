@@ -87,11 +87,10 @@ body, html {
 /* Hero Section */
 .hero {
   width: 100%;
-  background-image: url('/anjing.png'); /* Ubah sesuai nama gambar di public */
+  background-image: url('/src/assets/image\ 5.png');
   background-color: #000000;
   background-size: cover;
   background-position: center;
-
   height: 490px;
   position: relative; 
   display: flex;
