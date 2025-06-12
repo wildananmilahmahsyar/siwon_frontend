@@ -29,8 +29,13 @@ const Dashboard = () => {
   }, [user]);
 
   // Ambil pengajuan per status (hanya satu per status)
-  const getPengajuanByStatus = (status) =>
-    pengajuan.find((p) => p.status === status.toLowerCase());
+  const getPengajuanByStatus = (status) => {
+  const filtered = pengajuan
+      .filter((p) => p.status === status.toLowerCase() && p.Hewan)
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    return filtered[0] || null;
+  };
+
 
   return (
     <>
